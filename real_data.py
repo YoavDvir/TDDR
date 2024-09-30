@@ -538,11 +538,11 @@ class TDDTR:
         newicktr = f.read()
         unimog_tnj = Tree(newicktr, format=3)
 
-        sgc_treedata = "SGC" + self.atgcnum + "_treedata.txt"
+        sgc_treedata = "sgc" + self.atgcnum + "_treedata.txt"
         f = open(sgc_treedata, "r")
         newicktr = f.read()
         sgc_tnj = Tree(newicktr, format=3)
-        trpng = "TDD" + self.atgcnum + ".png"
+        trpng = "tddtr" + self.atgcnum + ".png"
         tr.render(trpng, w=183, units="mm")
 
         treedata = "atgc" + self.atgcnum + ".txt"
