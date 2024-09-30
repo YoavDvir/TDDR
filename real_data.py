@@ -545,7 +545,7 @@ class TDDTR:
         trpng = "tddtr" + self.atgcnum + ".png"
         tr.render(trpng, w=183, units="mm")
 
-        treedata = "atgc" + self.atgcnum + ".txt"
+        treedata = "atgc" + self.atgcnum + "_treedata.txt"
         f = open(treedata, "r")
 
         newicktr_atgc = f.read()
