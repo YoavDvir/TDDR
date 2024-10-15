@@ -34,6 +34,7 @@ class TDDTR:
                                     # with that mean.
     leaves_number = 10              # Number of leaves (taxa) in the random tree
     n0 = 2000                       # Number of genes in at the root genome
+    with_unimog = False             # Should be true only if UNIMOG is downloaded
 #_______________________________________________________________________________________________________________________
     genome0 = list(range(n0))       # The root genome
     genomes = [genome0]             # List of genome; one for each node at the rooted tree.
@@ -845,18 +846,25 @@ class TDDTR:
             self.tddtr()
             time_end = time.time()
             self.time_tddtr += time_end - time_start
-            time_start = time.time()
-            self.unimog()
-            time_end = time.time()
-            self.time_unimog += time_end - time_start
+            if self.with_unimog:
+                time_start = time.time()
+                self.unimog()
+                time_end = time.time()
+                self.time_unimog += time_end - time_start
             time_start = time.time()
             self.sgc()
             time_end = time.time()
             self.time_sgc += time_end - time_start
-            print(str(i+1)+":","unimog rfd:", round(self.rfd_unimog / (i+1) / self.rfd_max,5), "scg rfd:",
-                  round(self.rfd_sgc / (i+1) / self.rfd_max,5) , "tddtr rfd:",
-                  round(self.rfd_tddtr  / (i+1) / self.rfd_max,5))
-            print("number of successes:", self.mean_success_rate)
+            if self.with_unimog:
+                print(str(i+1)+":","unimog rfd:", round(self.rfd_unimog / (i+1) / self.rfd_max,5), "scg rfd:",
+                      round(self.rfd_sgc / (i+1) / self.rfd_max,5) , "tddtr rfd:",
+                      round(self.rfd_tddtr  / (i+1) / self.rfd_max,5))
+            else:
+                print(str(i+1)+":",
+                      round(self.rfd_sgc / (i+1) / self.rfd_max,5) , "tddtr rfd:",
+                      round(self.rfd_tddtr  / (i+1) / self.rfd_max,5))                
+                print("number of successes:", self.mean_success_rate)
+                
         self.mean_success_rate = self.mean_success_rate / self.trials
 
         self.time_unimog =  self.time_unimog/ self.trials
@@ -869,8 +877,12 @@ class TDDTR:
 
         print("trials:",self.trials,"mean edge length:", self.mean_edge_length)
         print("leaves number", self.leaves_number, "genome length", self.n0 )
-        print("unimog rfd:",self.rfd_unimog,"scg rfd:",self.rfd_sgc,"tddtr rfd:",self.rfd_tddtr)
-        print("unimog time:", self.time_unimog, "scg rfd:", self.time_sgc, "tddtr rfd:", self.time_tddtr)
+        if self.with_unimog:
+            print("unimog rfd:",self.rfd_unimog,"scg rfd:",self.rfd_sgc,"tddtr rfd:",self.rfd_tddtr)
+            print("unimog time:", self.time_unimog, "scg rfd:", self.time_sgc, "tddtr rfd:", self.time_tddtr)
+        else:
+            print("scg rfd:",self.rfd_sgc,"tddtr rfd:",self.rfd_tddtr)
+            print("scg rfd:", self.time_sgc, "tddtr rfd:", self.time_tddtr)            
         print("mean success rate:", self.mean_success_rate)
         return
 tddtr_obj = TDDTR()
