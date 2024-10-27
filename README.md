@@ -1,8 +1,11 @@
 # DTTRT
 You can find here two Phyton files:
 1. trees_simulations - tddtr.py
+   
   This program conducts simulations:
+  
   It creates random trees and reconstructs them using TDDR, SGC+BioPhyton NJ, and DCJ + BioPhyton NJ.
+  
   In order to run dcj, one should have Java 8 and download UniMoG (BiBiServ2 - DCJ). UniMoG should be in the same folder as the code.
 
   Simulations parameters: (definitions at the top of class TDDR)
