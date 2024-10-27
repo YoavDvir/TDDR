@@ -85,11 +85,17 @@ You can find here two Phyton files:
   
   dcj32_treedata.txt
 
-  Output files:
+  Output:
 
   Normalized RF distances are printed on the screen. 
+  
   TDDR tree figure:
-  one of tddtr5.png, tddtr7.png, tddtr8.png, tddtr9.png, tddtr32.png (according to the value of atgcnum).
+  
+  one of:
+  
+  tddtr5.png, tddtr7.png, tddtr8.png, tddtr9.png, tddtr32.png 
+  
+  (according to the value of atgcnum).
 
 
 
