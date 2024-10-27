@@ -1,4 +1,4 @@
-# DTTRT
+# TDDR
 You can find here two Phyton files:
 1. trees_simulations - tddtr.py
    
