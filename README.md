@@ -32,7 +32,7 @@ You can find here two Phyton files:
 
   Files ATGCs genomes downloaded from ATGCs site and reduced to relevant columns:
   
-  Column left: #cog, genomeassembly, protein.
+  Columns: #cog, genomeassembly, protein.
 
   ATGC5reduced.csv
   
