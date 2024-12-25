@@ -6,11 +6,11 @@ You can find here two Phyton files:
   
   It creates random trees and reconstructs them using TDDR, SGC+BioPhyton NJ, and DCJ + BioPhyton NJ.
   
-  To run, Java 8 must be installed. You must also download UniMoG (BiBiServ2 - DCJ), which should be in the same folder as the code.
+  Java 8 must be installed to run. You must also download UniMoG (BiBiServ2 - DCJ), which should be in the same folder as the code.
 
-  command line: py sim_tr.py
+  example for the command line: py sim_tr.py 10 0.05 25 2000
 
-  sim_tr.py arguments : 
+  Arguments: 
   
   trials = 10       				 - Number of repetitions
   
@@ -21,19 +21,17 @@ You can find here two Phyton files:
   
   genes_n = 2000                - Number of genes in at the root genome
 
-  command line: py sim_tr.py 10 0.05 25 2000
-  
   Output: The results are printed on the screen.
 
 2. real_data.py
    
-   Test TDDR on ATDCs: ATDC005, ATDC007, ATDC008, ATDC009, ATDC032
+   Test TDDR on ATGCs: ATDC005, ATDC007, ATDC008, ATDC009, ATDC032
 
-   Compare the RF-resulting trees with trees constructed with the ATGC tree,  SGC+BioPhyton NJ tree, and DCJ + BioPhyton NJ tree. 
+   example for the command line: py real_data.py 5
 
   Argument:
   
-  atgcnum = "5"               The ATGC  number
+  atgcnum = 5              The ATGC  number
 
   Input files: (all files included the respiratory and should be placed with the code).
 
@@ -91,15 +89,19 @@ You can find here two Phyton files:
 
   Output:
 
+  print the constructed Newick, the construction steps, the figure of the constructed tree, and the figure of the tree downloaded from ATGC site
+   
+   Compare the NRF distance of the resulting tree with the ATGC tree,  SGC+BioPhyton NJ tree, and DCJ + BioPhyton NJ tree.
+
   Normalized RF distances are printed on the screen. 
   
-  TDDR tree figure:
   
-  one of:
+  TDDR tree figure: tddr+str(atgcnum).png
   
-  tddtr5.png, tddtr7.png, tddtr8.png, tddtr9.png, tddtr32.png 
+  Newick file: tddr+str(atgcnum)_treedata.txt
   
-  (according to the value of atgcnum).
+  
+ 
 
 
 
