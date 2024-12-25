@@ -1,33 +1,37 @@
 # TDDR
 You can find here two Phyton files:
-1. trees_simulations - tddtr.py
+1. trees simulations - sim_tr.py
    
   This program conducts simulations:
   
   It creates random trees and reconstructs them using TDDR, SGC+BioPhyton NJ, and DCJ + BioPhyton NJ.
   
-  In order to run dcj, one should have Java 8 and download UniMoG (BiBiServ2 - DCJ). UniMoG should be in the same folder as the code.
+  To run, Java 8 must be installed. You must also download UniMoG (BiBiServ2 - DCJ), which should be in the same folder as the code.
 
-  Simulations parameters: (definitions at the top of class TDDR)
+  command line: py sim_tr.py
+
+  sim_tr.py arguments : 
   
   trials = 10       				 - Number of repetitions
   
-  mean_edge_length = 0.05      	 - Mean edge length. Each directional edge length is from 
-                                    		  exponential distribution with that mean.
-                                        
-  leaves_number = 10              	 - Number of leaves (taxa) in the random tree
+  edge_ml = 0.05               - Mean edge length. Each directional edge length is from 
+                                    		  exponential distribution with that mean.                                      
+
+  leaves_n = 25                 - Number of leaves (taxa) in the random tree
   
-  n0 = 2000                       		 - Number of genes in at the root genome
-  
-  with_unimog = False            		 - Should be true only if UNIMOG is downloaded
+  genes_n = 2000                - Number of genes in at the root genome
+
+  command line: py sim_tr.py 10 0.05 25 2000
   
   Output: The results are printed on the screen.
 
 2. real_data.py
+   
    Test TDDR on ATDCs: ATDC005, ATDC007, ATDC008, ATDC009, ATDC032
-   and compare the resulting trees by RF with trees constructed with the ATGC tree,  SGC+BioPhyton NJ tree, and DCJ + BioPhyton NJ tree. 
 
-  Parameters: (definition at the top of class TDDR)
+   Compare the RF-resulting trees with trees constructed with the ATGC tree,  SGC+BioPhyton NJ tree, and DCJ + BioPhyton NJ tree. 
+
+  Argument:
   
   atgcnum = "5"               The ATGC  number
 
